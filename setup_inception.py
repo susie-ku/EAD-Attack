@@ -52,7 +52,7 @@ from six.moves import urllib
 import tensorflow.compat.v1 as tf
 
 # pylint: disable=line-too-long
-DATA_URL = 'http://jaina.cs.ucdavis.edu/datasets/adv/imagenet/inception_v3_2016_08_28_frozen.tar.gz'
+DATA_URL = 'https://image-net.org/data/ILSVRC/2012/ILSVRC2012_img_test_v10102019.tar'
 # pylint: enable=line-too-long
 
 
