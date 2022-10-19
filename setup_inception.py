@@ -102,7 +102,7 @@ def create_graph():
   # Creates graph from saved graph_def.pb.
   with tf.gfile.FastGFile(os.path.join(
     #  FLAGS.model_dir, 'classify_image_graph_def.pb'), 'rb') as f:
-      FLAGS.model_dir, 'frozen_inception_v3.pb'), 'rb') as f:
+      FLAGS.model_dir, 'inception_v3.ckpt'), 'rb') as f:
     graph_def = tf.GraphDef()
     graph_def.ParseFromString(f.read())
     #for line in repr(graph_def).split("\n"):
