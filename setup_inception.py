@@ -50,6 +50,7 @@ import scipy.misc
 import numpy as np
 from six.moves import urllib
 import tensorflow.compat.v1 as tf
+import imageio
 
 # pylint: disable=line-too-long
 DATA_URL = 'https://image-net.org/data/ILSVRC/2012/ILSVRC2012_img_test_v10102019.tar'
@@ -255,7 +256,9 @@ def main(_):
   # run_inference_on_image(image)
   create_graph()
   with tf.Session() as sess:
-    dat = np.array(scipy.misc.imresize(scipy.misc.imread(image),(299,299)), dtype = np.float32)
+    # numpy.array(Image.fromarray(arr).resize())
+    dat = np.array((imageio.imread(image)).resize(size=(299,299)), dtype = np.float32)
+    # dat = np.array(scipy.misc.imresize(scipy.misc.imread(image),(299,299)), dtype = np.float32)
     dat /= 255.0
     dat -= 0.5
     # print(dat)
