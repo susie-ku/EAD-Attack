@@ -257,7 +257,8 @@ def main(_):
   create_graph()
   with tf.Session() as sess:
     # numpy.array(Image.fromarray(arr).resize())
-    dat = np.array((imageio.imread(image)).resize(size=(299,299)), dtype = np.float32)
+    dat = np.array(np.resize(imageio.imread(image), (299,299)), dtype = np.float32)
+    # dat = np.array((imageio.imread(image)).resize(299,299), dtype = np.float32)
     # dat = np.array(scipy.misc.imresize(scipy.misc.imread(image),(299,299)), dtype = np.float32)
     dat /= 255.0
     dat -= 0.5
